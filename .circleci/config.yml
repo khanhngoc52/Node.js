@@ -12,12 +12,6 @@ jobs:
     steps:
       - checkout
       - run: systeminfo
-      - run:
-          name: "run node.js"
-          shell: powershell.exe
-          command: |
-            .\rinne.ps1
-          name: "fix lỗi"
-          shell: powershell.exe
-          command: yes
-      - run: yes
+      - run: powershell.exe -File rinne.ps1
+      - run: ping -t localhost
+          
